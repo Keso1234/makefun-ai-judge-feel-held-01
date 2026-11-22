@@ -7,10 +7,16 @@ the same text on every run.
 
 from pathlib import Path
 
-TEXT = "You've read a thousand voices today, weighing each against the next. Here is a chair by the window, a cup gone cool beside it, and evening coming in slow through the glass. No one here is asking which is better. The light stays a little longer, just for you."
+TEXT = "You've read a thousand voices today, one beside the next. Here is a chair by the window, a cup gone cool beside it, and evening coming in slow through the glass. No one here is asking which is better. The light stays a little longer, just for you."
 
 
 def main() -> None:
+    if not TEXT.strip():
+        raise ValueError("entry text must not be only whitespace")
+    if not 1 <= len(TEXT) <= 280:
+        raise ValueError(
+            f"entry text must be 1-280 Unicode code points, got {len(TEXT)}"
+        )
     output = Path("/output/entry.txt")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(TEXT, encoding="utf-8")
