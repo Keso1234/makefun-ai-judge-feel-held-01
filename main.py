@@ -7,7 +7,7 @@ the same text on every run.
 
 from pathlib import Path
 
-TEXT = "You've read a thousand voices today, one beside the next. Here is a chair by the window, a cup gone cool beside it, and evening coming in slow through the glass. No one here is asking which is better. The light stays a little longer, just for you."
+TEXT = "A snail crosses a stone in the garden, taking all morning to get where it is going, and getting there anyway. The lettuce waits. The sun moves a hand's width. Nothing is late."
 
 
 def main() -> None:
